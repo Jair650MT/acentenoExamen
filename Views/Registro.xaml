@@ -91,7 +91,7 @@
             Grid.Column="0"/>
             <Picker x:Name="pkCiudad"
         Grid.Row="1"
-        Grid.Column="2"
+        Grid.Column="1"
 >
                 <Picker.Items>
                     <x:String>Quito</x:String>

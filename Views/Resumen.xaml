@@ -97,5 +97,9 @@
                    Grid.Column="1"/>
 
         </Grid>
+        <Button x:Name="btnCerrar"
+                Text="Cerrar Sesion"
+                Clicked="btnCerrar_Clicked"
+            />
     </VerticalStackLayout>
 </ContentPage>

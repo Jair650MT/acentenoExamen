@@ -22,4 +22,9 @@ public partial class Resumen : ContentPage
 
 		
 	}
+
+    private void btnCerrar_Clicked(object sender, EventArgs e)
+    {
+		Navigation.PushAsync(new Views.Login());
+    }
 }

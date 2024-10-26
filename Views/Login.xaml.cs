@@ -2,22 +2,20 @@ namespace acentenoExamen.Views;
 
 public partial class Login : ContentPage
 {
-	public Login()
-	{
-		InitializeComponent();
-	}
+    public Login()
+    {
+        InitializeComponent();
+    }
 
     private void btnIniciar_Clicked(object sender, EventArgs e)
     {
         string[,] usuarios =
-        {
-            { "estudiante2024", "cuisrael2024" },
-            { "examen1", "parcial1" },
-            { "NombreEstudiante", "2024" },
-            { "111", "222" },
-        };
-
-
+{
+    { "estudiante2024", "cuisrael2024" },
+    { "examen1", "parcial1" },
+    { "NombreEstudiante", "2024" },
+    { "111", "222" },
+};
 
         bool encontrado = false;
 
@@ -25,15 +23,11 @@ public partial class Login : ContentPage
         {
             if (usuarios[i, 0] == txtUsuario.Text && usuarios[i, 1] == txtContrasena.Text)
             {
-                string user;
-                Navigation.PushAsync(new Views.Registro(user=txtUsuario.Text));
+                string user = txtUsuario.Text;
+                Navigation.PushAsync(new Views.Registro(user));
                 encontrado = true;
                 break;
             }
-            else
-            {
-                DisplayAlert("Error", "Dato incorecto", "ok");
-                break;
         }
 
         if (!encontrado)
@@ -42,9 +36,8 @@ public partial class Login : ContentPage
         }
 
     }
-
     private void btnAcerca_Clicked(object sender, EventArgs e)
     {
-        DisplayAlert("Error", "Este programa fue desarrollado por:\nJair Centeno\nde 8vo Ingenieria en sistemas ", "ok");
+        DisplayAlert("Alerta!!!", "Este programa fue desarrollado por:\nJair Centeno\nde 8vo Ingenieria en sistemas ", "ok");
     }
 }
