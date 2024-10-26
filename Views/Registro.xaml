@@ -3,7 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="acentenoExamen.Views.Registro"
              >
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        Spacing="20"
+        Padding="25">
+
+        <Label x:Name="lblConect"
+               TextColor="Red"
+               FontSize="22"
+               HorizontalTextAlignment="Start"/>
         <Label 
             Text="REGISTRO"
             FontSize="22"
@@ -23,8 +30,8 @@
             </Grid.ColumnDefinitions>
 
             <Label Text="Nombre"
-        Grid.Row="0"
-        Grid.Column="0"/>
+                    Grid.Row="0"
+                    Grid.Column="0"/>
             <Entry x:Name="txtNombre"
                 Placeholder="Ingrese el Nombre"
                 MaxLength="25"
@@ -60,6 +67,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -67,16 +76,52 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
             <Label Text="Fecha"
-Grid.Row="0"
-Grid.Column="0"/>
+            Grid.Row="0"
+            Grid.Column="0"/>
+            <DatePicker x:Name="dFechas"
+                    FontSize="20"
+                    Date="01/01/2024"
+                    Format="MM/dd/yyyy"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
             <Label Text="Ciudad"
-Grid.Row="0"
-Grid.Column="0"/>
+            Grid.Row="1"
+            Grid.Column="0"/>
+            <Picker x:Name="pkCiudad"
+        Grid.Row="1"
+        Grid.Column="2"
+>
+                <Picker.Items>
+                    <x:String>Quito</x:String>
+                    <x:String>Cuenca</x:String>
+                    <x:String>Guayaquil</x:String>
+                </Picker.Items>
+            </Picker>
             <Label Text="Monto inicial"
-Grid.Row="0"
-Grid.Column="0"/>
+            Grid.Row="2"
+            Grid.Column="0"/>
+            <Entry x:Name="txtMontoInicial"
+            Placeholder="Ingrese monto inicial"
+            MaxLength="25"
+            Grid.Row="2"
+            Grid.Column="1"/>
+            <Button x:Name="btnCalcular"
+            Text="Calcular pago mensual"
+            Clicked="btnCalcular_Clicked"        
+            Grid.Row="3"
+            Grid.Column="0"/>
+            
+            <Label x:Name="lblCalculo"
+                   FontSize="20"
+            Grid.Row="3"
+            Grid.Column="1"/>
+
 
         </Grid>
+        <Button x:Name="btnResumen"
+                Text="Ver resumen"
+                Clicked="btnResumen_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
